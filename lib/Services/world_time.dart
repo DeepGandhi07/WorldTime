@@ -72,10 +72,12 @@ class WorldTime {
       }
 
       // Check if it's daytime or nighttime
-      isDaytime = now.hour >= 6 && now.hour < 20;
+      isDaytime = now.hour >= 6 && now.hour < 20 ? true : false;
 
       // Set the time and date properties
-      time = DateFormat('h:mm a').format(now);
+      // time = DateFormat('h:mm a').format(now);
+      time = DateFormat.jm().format(now);
+
       // String date = DateFormat('MMMM dd, yyyy').format(now);
       // time = '$time\n$date';
     } catch (e) {
