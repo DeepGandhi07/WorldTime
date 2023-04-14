@@ -74,8 +74,10 @@ class WorldTime {
       // Check if it's daytime or nighttime
       isDaytime = now.hour >= 6 && now.hour < 20;
 
-      // Set the time property
-      time = DateFormat('h:mm:ss a').format(now);
+      // Set the time and date properties
+      time = DateFormat('h:mm a').format(now);
+      // String date = DateFormat('MMMM dd, yyyy').format(now);
+      // time = '$time\n$date';
     } catch (e) {
       print('Error: $e');
       time = 'Could not get time data';
